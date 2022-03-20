@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,12 @@ Route::get('/manufacturers', function () {
 
 Route::get('/equipment', function () {
     return view('equipment');
+});
+
+Route::get('/db-test', function () {
+    try {
+        echo DB::connection()->getDatabaseName();
+    } catch (\Exception $e) {
+        echo 'None';
+    }
 });
