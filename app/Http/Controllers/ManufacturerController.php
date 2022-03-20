@@ -2,83 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Manufacturer;
 use Illuminate\Http\Request;
 
-class ManufactureController extends Controller
+class ManufacturerController extends ApiController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $data = Manufacturer::all();
+        return $this->successResponse($data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function show(Manufacturer $manufacturer)
     {
-        //
+        try {
+            return $this->successResponse($manufacturer);
+        } catch (\Throwable $th) {
+            $this->errorResponse($th->getMessage(), 404);
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        try {
+            $manufacturer = Manufacturer::create($request->all());
+            return $this->successResponse($manufacturer, 'created', 201);
+        } catch (\Throwable $th) {
+            $this->errorResponse($th->getMessage(), 422);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update(Request $request, Manufacturer $manufacturer)
     {
-        //
+        try {
+            $manufacturer->update($request->all());
+            return $this->successResponse($manufacturer, 'updated', 200);
+        } catch (\Throwable $th) {
+            $this->errorResponse($th->getMessage(), 422);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function destroy(Manufacturer $manufacturer)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        try {
+            $manufacturer->delete();
+            return $this->successResponse($manufacturer, 'deleted', 200);
+        } catch (\Throwable $th) {
+            $this->errorResponse($th->getMessage(), 422);
+        }
     }
 }
