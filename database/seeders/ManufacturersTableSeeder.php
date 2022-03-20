@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Manufacture;
+use App\Models\Manufacturer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ManufacturesTableSeeder extends Seeder
+class ManufacturersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class ManufacturesTableSeeder extends Seeder
      */
     public function run()
     {
-        Manufacture::truncate();
-        Manufacture::factory()->count(5)->create();
+        Manufacturer::truncate();
+        Manufacturer::factory()->count(5)->create();
     }
 }

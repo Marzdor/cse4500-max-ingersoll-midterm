@@ -6,7 +6,7 @@ use App\Traits\Uuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Manufacture extends Model
+class Manufacturer extends Model
 {
     use Uuids;
     use HasFactory;

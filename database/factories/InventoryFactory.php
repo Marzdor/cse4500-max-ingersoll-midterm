@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Manufacture;
+use App\Models\Manufacturer;
 use App\Models\Purchase;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,7 +23,7 @@ class InventoryFactory extends Factory
             'name' => $this->faker->word,
             'category' => $this->faker->randomElement(['Desktop', 'Phone', 'Laptop']),
             'purchase_uuid' => Purchase::factory(),
-            'manufacture_uuid' => Manufacture::factory(),
+            'manufacturer_uuid' => Manufacturer::factory(),
             'user_uuid' => User::factory()
         ];
     }

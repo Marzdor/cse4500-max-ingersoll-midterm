@@ -15,7 +15,7 @@ class Inventory extends Model
         'name',
         'price',
         'purchased_on',
-        'manufacture_uuid',
+        'manufacturer_uuid',
         'category',
         'user_uuid'
     ];
