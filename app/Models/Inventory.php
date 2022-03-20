@@ -11,5 +11,12 @@ class Inventory extends Model
     use Uuids;
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name',
+        'price',
+        'purchased_on',
+        'manufacture_uuid',
+        'category',
+        'user_uuid'
+    ];
 }

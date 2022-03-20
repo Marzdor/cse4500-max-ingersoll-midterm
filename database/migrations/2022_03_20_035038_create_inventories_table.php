@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('inventories', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id')->index();
             $table->string('name', 128);
+            $table->bigInteger('invoice', true, true);
+            $table->decimal('price', 9, 2);
+            $table->dateTime('purchased_on');
+            $table->foreignUuid('manufacture_uuid')->default('')->references('id')->on('manufactures')->onDelete('cascade');
+            $table->enum('category', ['Desktop', 'Phone', 'Laptop']);
+            $table->foreignUuid('user_uuid')->default('')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
