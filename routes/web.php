@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManufacturerController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -18,9 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/manufacturers', function () {
-    return view('manufacturers');
-});
+Route::resource('/manufacturers', ManufacturerController::class);
+
 
 Route::get('/equipment', function () {
     return view('equipment');
