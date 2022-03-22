@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('equipment', function (Blueprint $table) {
             $table->uuid('id')->index();
             $table->string('name', 128);
-            $table->enum('category', ['Desktop', 'Phone', 'Laptop']);
+            $table->enum('category', ['Desktop', 'Phone', 'Laptop', 'Tablet']);
+            $table->json('specifications');
             $table->foreignUuid('purchase_uuid')->default('')->references('id')->on('purchases')->onDelete('cascade');
             $table->foreignUuid('manufacturer_uuid')->default('')->references('id')->on('manufacturers')->onDelete('cascade');
             $table->foreignUuid('user_uuid')->default('')->references('id')->on('users')->onDelete('cascade');
