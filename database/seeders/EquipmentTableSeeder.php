@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Inventory;
+use App\Models\Equipment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class InventoriesTableSeeder extends Seeder
+class EquipmentTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class InventoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        Inventory::truncate();
-        Inventory::factory()->count(5)->create();
+        Equipment::truncate();
+        Equipment::factory()->count(5)->create();
     }
 }

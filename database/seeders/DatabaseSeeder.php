@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(ManufacturersTableSeeder::class);
         $this->call(PurchasesTableSeeder::class);
-        $this->call(InventoriesTableSeeder::class);
+        $this->call(EquipmentTableSeeder::class);
 
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

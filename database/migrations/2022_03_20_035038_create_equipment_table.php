@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inventories', function (Blueprint $table) {
+        Schema::create('equipment', function (Blueprint $table) {
             $table->uuid('id')->index();
             $table->string('name', 128);
             $table->enum('category', ['Desktop', 'Phone', 'Laptop']);
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventories');
+        Schema::dropIfExists('equipment');
     }
 };
