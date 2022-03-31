@@ -37,7 +37,6 @@
             </table>
         </div>
     </div>
-    <a href="{{ route('equipment.create') }} " class="btn btn-primary">Create</a>
 @stop
 
 @section('css')

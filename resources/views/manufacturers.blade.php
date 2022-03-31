@@ -41,7 +41,6 @@
             </table>
         </div>
     </div>
-    <a href="{{ route('manufacturers.create') }} " class="btn btn-primary">Create</a>
 @stop
 
 @section('css')
