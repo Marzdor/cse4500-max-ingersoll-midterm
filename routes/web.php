@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\PurchaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +22,12 @@ Route::get('/', function () {
 });
 
 Route::resource('/manufacturers', ManufacturerController::class);
+Route::get('/equipment/{equipment}/addNote', [EquipmentController::class, 'addNote'])->name('equipment.addNote');
+Route::put('/equipment/{equipment}/updateNotes', [EquipmentController::class, 'updateNotes'])->name('equipment.updateNotes');
+Route::put('/equipment/{equipment}/deleteNote/{note}', [EquipmentController::class, 'deleteNote'])->name('equipment.deleteNote');
+Route::resource('/equipment', EquipmentController::class);
+Route::resource('/purchases', PurchaseController::class);
 
-
-Route::get('/equipment', function () {
-    return view('equipment');
-});
 
 Route::get('/db-test', function () {
     try {

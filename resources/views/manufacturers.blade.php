@@ -33,7 +33,7 @@
                                 <p style="margin: 0">Phone: <b>{{ $manufacturer->tech_support['phone_number'] }}</b></p>
                             </td>
                             <td><a class="btn btn-default btn-sm"
-                                    href="{{ route('manufacturers.edit', ['manufacturer' => $manufacturer]) }}">Edit</a>
+                                    href="{{ route('manufacturers.edit', ['manufacturer' => $manufacturer->id]) }}">Edit</a>
                             </td>
                         </tr>
                     @endforeach

@@ -56,8 +56,10 @@ class ManufacturerController extends Controller
      * @param  \App\Models\Manufacturer  $manufacturer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Manufacturer $manufacturer)
+    public function edit($id)
     {
+        $manufacturer = Manufacturer::where('id', $id)->first();
+
         return view('manufacturers.edit', compact('manufacturer'));
     }
 
