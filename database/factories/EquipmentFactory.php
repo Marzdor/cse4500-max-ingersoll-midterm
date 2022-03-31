@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Manufacturer;
 use App\Models\Purchase;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -34,7 +33,6 @@ class EquipmentFactory extends Factory
             ],
             'purchase_uuid' => Purchase::factory(),
             'manufacturer_uuid' => Manufacturer::factory(),
-            'user_uuid' => User::factory()
         ];
     }
 }

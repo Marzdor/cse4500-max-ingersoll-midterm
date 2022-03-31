@@ -20,7 +20,6 @@ return new class extends Migration
             $table->json('specifications');
             $table->foreignUuid('purchase_uuid')->default('')->references('id')->on('purchases')->onDelete('cascade');
             $table->foreignUuid('manufacturer_uuid')->default('')->references('id')->on('manufacturers')->onDelete('cascade');
-            $table->foreignUuid('user_uuid')->default('')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
