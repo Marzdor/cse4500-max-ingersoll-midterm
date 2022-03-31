@@ -20,11 +20,11 @@ class ManufacturerFactory extends Factory
             'name' => $this->faker->word,
             'sales_info' => [
                 'email' => $this->faker->companyEmail(),
-                'phone_number' => $this->faker->phoneNumber()
+                'phone_number' => $this->faker->numerify('###-###-####')
             ],
             'tech_support' => [
                 'email' => $this->faker->companyEmail(),
-                'phone_number' => $this->faker->phoneNumber()
+                'phone_number' => $this->faker->numerify('###-###-####')
             ],
         ];
     }
