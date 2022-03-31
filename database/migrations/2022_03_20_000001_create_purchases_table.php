@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('id')->index();
             $table->bigInteger('invoice', true, true);
             $table->decimal('price', 9, 2);
-            $table->dateTime('purchased_on');
+            $table->date('purchased_on');
             $table->json('user_info');
             $table->timestamps();
         });

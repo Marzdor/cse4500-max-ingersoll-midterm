@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name', 128);
             $table->enum('category', ['Desktop', 'Phone', 'Laptop', 'Tablet']);
             $table->json('specifications');
+            $table->json('notes');
             $table->foreignUuid('purchase_uuid')->default('')->references('id')->on('purchases')->onDelete('cascade');
             $table->foreignUuid('manufacturer_uuid')->default('')->references('id')->on('manufacturers')->onDelete('cascade');
             $table->timestamps();

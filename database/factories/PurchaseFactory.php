@@ -18,7 +18,7 @@ class PurchaseFactory extends Factory
     {
         return [
             'price' => $this->faker->randomFloat(2, 1, 1000),
-            'purchased_on' => $this->faker->dateTime('now', 'UTC'),
+            'purchased_on' => $this->faker->date(),
             'user_info' => [
                 'first_name' => $this->faker->firstName(),
                 'last_name' => $this->faker->lastName(),

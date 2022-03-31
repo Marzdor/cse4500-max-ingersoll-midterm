@@ -18,7 +18,8 @@ class Equipment extends Model
         'manufacturer_uuid',
         'category',
         'user_uuid',
-        'specifications'
+        'specifications',
+        'notes'
     ];
 
     /**
@@ -28,6 +29,7 @@ class Equipment extends Model
      */
     protected $casts = [
         'specifications' => 'array',
+        'notes' => 'array',
     ];
 
 
@@ -43,6 +45,11 @@ class Equipment extends Model
             "ram":"",
             "storage":"",
             "mac_address":""
+        }',
+        'notes' => '{
+            "id": "",
+            "created_on": "",
+            "message": ""
         }',
     ];
 }

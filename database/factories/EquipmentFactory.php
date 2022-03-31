@@ -31,6 +31,7 @@ class EquipmentFactory extends Factory
                 "storage" => strval($this->faker->randomNumber(3, true)) . 'Gb',
                 "mac_address" => $this->faker->macAddress()
             ],
+            'notes' => [],
             'purchase_uuid' => Purchase::factory(),
             'manufacturer_uuid' => Manufacturer::factory(),
         ];
